@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,6 +17,19 @@
         android:theme="@style/Theme.TravelEaseMAD"
         tools:targetApi="31">
 
+        <activity
+            android:name=".MainDashboard"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".HotelDetailsActivity" />
+
+        <activity
+            android:name=".AdventuresActivity"
+            android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -26,7 +43,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="YOUR_API_KEY" />
+            android:value="AIzaSyCvqttSXbub_fGsmz2l2vBps0s8Z1OSVso" />
 
         <activity
             android:name=".MapsActivity"
@@ -46,9 +63,25 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false">
-            
+            android:exported="false" />
+        <activity
+            android:name=".HotelWall"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity android:name=".HotelDashboardActivity" />
+        <activity android:name=".HotelsActivity">
+
+            <!-- You can add other activity attributes here -->
+        </activity>
+        <activity android:name=".BookingSummaryActivity">
+            <!-- Other configurations for BookingSummaryActivity -->
+        </activity>
+
     </application>
 
 </manifest>
