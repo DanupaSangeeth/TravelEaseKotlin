@@ -21,6 +21,12 @@ class MainDashboard : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.iconReviews.setOnClickListener {
+            // Start HotelsActivity when the Hotels icon is clicked
+            val intent = Intent(this, ReviewActivity::class.java)
+            startActivity(intent)
+        }
+
         // Set up click listeners for other icons if needed
         // binding.iconAttractions.setOnClickListener { ... }
         // binding.iconReviews.setOnClickListener { ... }

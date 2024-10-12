@@ -1,56 +1,48 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ReviewActivity">
+    android:orientation="vertical">
 
-    <!-- Rating Bar -->
     <RatingBar
         android:id="@+id/ratingBar"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:numStars="5"
-        android:stepSize="1.0"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp" />
+        android:layout_height="wrap_content"/>
 
-    <!-- Review Text Input -->
     <EditText
         android:id="@+id/editTextReview"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Write your review"
-        android:padding="16dp"
-        app:layout_constraintTop_toBottomOf="@id/ratingBar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        android:hint="Enter your review"
+        tools:ignore="Autofill,HardcodedText" />
 
-    <!-- Submit Button -->
     <Button
         android:id="@+id/btnSubmitReview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Submit"
-        app:layout_constraintTop_toBottomOf="@id/editTextReview"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp" />
+        android:text="Submit Review"
+        tools:ignore="HardcodedText" />
 
-    <!-- RecyclerView for Reviews -->
+    <TextView
+        android:text="Positive Reviews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="HardcodedText" />
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewReviews"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/btnSubmitReview"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp" />
+        android:id="@+id/recyclerViewPositiveReviews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:text="Negative Reviews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="HardcodedText" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewNegativeReviews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
