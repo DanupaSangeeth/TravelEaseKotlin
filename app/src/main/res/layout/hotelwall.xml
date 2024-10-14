@@ -6,19 +6,10 @@
     android:layout_height="match_parent">
 
     <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="800dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:backgroundTint="#331212"
-        android:fillViewport="false"
-        android:layerType="none"
-        android:rotationX="0"
-        android:rotationY="0"
-        android:scrollbarStyle="insideOverlay"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,7 +21,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="500dp"
                 android:scaleType="fitXY"
-
                 app:srcCompat="@drawable/hotel" />
 
             <TextView
@@ -38,7 +28,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#E3EAF0"
-                android:fadingEdge="none"
                 android:fontFamily="casual"
                 android:text="Your room, for less..."
                 android:textColor="#030824"
@@ -49,22 +38,17 @@
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:autoText="false"
                 android:background="#EFF6FB"
                 android:fontFamily="serif"
-                android:rotation="0"
-                android:rotationX="0"
-                android:rotationY="0"
                 android:text="Search Hotels To Get The Right Deal For You"
                 android:textAlignment="center"
                 android:textColor="#02064E"
-                android:textDirection="inherit"
                 android:textSize="40sp"
                 android:textStyle="bold|italic" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="54dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="32dp"
@@ -75,7 +59,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Get Started"
-                    android:textColor="@color/white"
+                    android:textColor="@android:color/white"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
@@ -83,8 +67,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     android:clickable="true"
-                    android:focusable="true"/>
-
+                    android:focusable="true" />
 
                 <ImageView
                     android:id="@+id/imageView2"

@@ -1,10 +1,14 @@
+
 package com.example.traveleasemad
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class BookingSummaryActivity : AppCompatActivity() {
+
 
     private lateinit var hotelDescription: TextView
     private lateinit var checkInDate: TextView
@@ -19,7 +23,7 @@ class BookingSummaryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_booking_summary)
 
-        // Initialize views
+
         hotelDescription = findViewById(R.id.hotelDescription)
         checkInDate = findViewById(R.id.checkInDate)
         checkOutDate = findViewById(R.id.checkOutDate)
@@ -29,7 +33,7 @@ class BookingSummaryActivity : AppCompatActivity() {
         bookingStatus = findViewById(R.id.bookingStatus)
         heading = findViewById(R.id.heading)
 
-        // Retrieve and display booking details from the intent
+
         val extras = intent.extras
         hotelDescription.text = "Hotel Description: ${extras?.getString("HOTEL_DESCRIPTION")}"
         checkInDate.text = "Check-In Date: ${extras?.getString("CHECK_IN_DATE")}"
@@ -38,7 +42,17 @@ class BookingSummaryActivity : AppCompatActivity() {
         numberOfAdults.text = "Number of Adults: ${extras?.getString("NUMBER_OF_ADULTS")}"
         numberOfChildren.text = "Number of Children: ${extras?.getString("NUMBER_OF_CHILDREN")}"
 
-        // Set the booking status
+
         bookingStatus.text = "Booked"
+
+        findViewById<ImageView>(R.id.imageView6).setOnClickListener {
+            val intent = Intent(this, MainDashboard::class.java)
+            startActivity(intent)
+        }
+
+        findViewById<ImageView>(R.id.imageView8).setOnClickListener {
+            val intent = Intent(this, HotelDashboardActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
